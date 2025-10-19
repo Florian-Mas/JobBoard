@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="connexion-inscription.css">
+    <title>Global Jobs</title>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <!--logo avion-->
+        <h1> <img src="avion.png" data-info="avion">Global <br> Jobs</h1>
+
+            <!--form de connexion-->
+            <form id="loginForm">
+                <label for="username">Nom d'utilisateur :</label>
+                <input type="text" id="CUsername" name="username" required/>
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="CPassword" name="password" required/>
+            <!--boutton de connexion-->
+                <div>
+                    <button id="LoginButton" type="submit">Se connecter</button>
+                    <button id="PageRegister" type="button">S'inscrire</button>
+                </div>
+
+            </form>
+
+        <!-- Formulaire inscription -->
+            <form id="FormInscription" class="form">
+                <label for="name">Nom :</label>
+                <input type="text" id="Name" name="name" required/>
+                <label for="firstName">Prénom :</label>
+                <input type="text" id="FirstName" name="firstName" required/>
+                <label for="mail">Email :</label>
+                <input type="email" id="Email" name="email" required/>
+                <label for="phone">Numéro de téléphone :</label>
+                <input type="text" id="Phone" name="phone">
+                <label for="username">Username :</label>
+                <input type="text" id="Username" name="username" required/>
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="Password" name="password" required/>
+                <div>
+                    <button type="submit" id="RegisterButton">S'inscrire</button>
+                    <button id="ReturnBtn" type="button">Retour</button>
+                </div>
+            </form>
+
+        </div>
+        <!--image à droite-->
+         <div>
+            <img src="paysage.png" data-info="paysage">
+        </div>
+    </div>
+
+
+    <script src="connexion-inscription.js"></script>
+</body>
+
+</html>

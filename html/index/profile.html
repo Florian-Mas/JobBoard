@@ -1,0 +1,181 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Document</title>
+</head>
+
+<body class="d-flex justify-content-center flex-column align-items-center">
+
+    <div class="bg-light vw-100 position-relative">
+        <div class=" position-relative p-0">
+            <!-- Image de couverture (forcée en 200px) -->
+            <img src="img/fond-profil.png" alt="paysage" class="vw-100 rounded"
+                style="height: 300px; object-fit: cover; object-position: center; display: block;">
+            <div class="row text-center">
+                <div class="col p-3">
+                    <h1>Profil</h1>
+                </div>
+            </div>
+
+
+            <div class="vw-100 vh-100">
+                <div class="bg-secondary-subtle w-100 h-100 d-flex align-center justify-content-center">
+                    <div class="grid text-center w-75">
+
+                        <!--nom/prénom-->
+                        <div class="row text-center gap-4">
+                            <div class="card rounded-4">
+                                <div class="card-body">
+                                    <p class=<div class="profil-info text-center mt-3">
+                                    <div id="profil-display">
+                                        <h2 class="profil-nom d-inline-flex align-items-center gap-2">
+                                            <span id="user-name">Nom Prénom</span>
+                                        </h2>
+                                        <p id="user-email" class="text-muted">email@exemple.com</p>
+                                        <p id="user-phone" class="text-muted">+33 6 12 34 56 78</p>
+                                        <p id="user-username" class="text-muted">username123</p>
+                                    </div>
+                                    </p>
+                                    <!--formulaire caché-->
+                                    <form id="profil-form" class="d-none text-center mt-2">
+                                        <input type="text" id="nom" placeholder="Nom" required
+                                            class="form-control mb-2">
+                                        <input type="text" id="prenom" placeholder="Prénom" required
+                                            class="form-control mb-2">
+                                        <input type="email" id="email" placeholder="Email" required
+                                            class="form-control mb-2">
+                                        <input type="tel" id="phone" placeholder="Téléphone" class="form-control mb-2">
+                                        <input type="text" id="username" placeholder="Username" required
+                                            class="form-control mb-2">
+                                        <label for="password">Mot de passe :</label>
+                                        <input type="password" id="password" name="password" required />
+                                        <button type="submit" class="btn btn-success btn-sm me-2">Valider</button>
+                                        <button type="button" id="cancel-profil"
+                                            class="btn btn-secondary btn-sm">Annuler</button>
+                                    </form>>
+                                </div>
+                            </div>
+                            <!--Nav bar-->
+                            <header>
+                                <nav id="navbar-example2" class="navbar px-3 mb-3">
+                                    <a class="navbar-brand" href="#">Menu</a>
+                                    <ul class="nav nav-pills">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#scrollspyHeading1">Ma présentation</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#scrollspyHeading2">Mes experiences
+                                                professionnelles</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#scrollspyHeading3">Mes formations</a>
+                                        </li>
+                                    </ul>
+                                    </li>
+                                    </ul>
+                                </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image de profil (remontée au-dessus) -->
+            <div>
+                <button type="button" class="btn btn-info" type="button" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" onclick="opAdmin()">OP<img src="./img/crayon.png" alt="" srcset=""
+                        class="position-absolute start-50" width="30px"
+                        style="top: 120px; z-index: 20; transform: translateX(100%); "></button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modification du profil</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Fermer"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <form action="../../php/users/UserUpdate.php" method="post">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1"><img
+                                                src="img/circle-user-solid-full.svg" alt="" srcset=""
+                                                width="25px"></span>
+                                        <input type="text" class="form-control" placeholder="Username"
+                                            aria-label="Username" aria-describedby="basic-addon1" name="username">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1"><img src="img/nom.png" alt=""
+                                                srcset="" width="25px"></span>
+                                        <input type="text" class="form-control" placeholder="Nom" aria-label="Username"
+                                            aria-describedby="basic-addon1" name="name">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1"><img src="img/nom.png" alt=""
+                                                srcset="" width="25px"></span>
+                                        <input type="text" class="form-control" placeholder="Prenom" aria-label="Prenom"
+                                            aria-describedby="basic-addon1" name="prenom">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1"><img src="img/e-mail.png"
+                                                alt="" srcset="" width="25px"></span>
+                                        <input type="text" class="form-control" placeholder="E-mail" aria-label="e-mail"
+                                            aria-describedby="basic-addon1" name="email">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1"><img src="img/fermer-a-cle.png"
+                                                alt="" srcset="" width="25px"></span>
+                                        <input type="text" class="form-control" placeholder="Mot de passe actuelle"
+                                            aria-label="Mot de passe" aria-describedby="basic-addon1"
+                                            name="oldpassword">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1"><img src="img/fermer-a-cle.png"
+                                                alt="" srcset="" width="25px"></span>
+                                        <input type="text" class="form-control"
+                                            placeholder="Nouveau mot de passe (Ignorer si non changement)"
+                                            aria-label="Mot de passe" aria-describedby="basic-addon1"
+                                            name="newpassword">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1"><img
+                                                src="img/appel-telephonique.png" alt="" srcset="" width="25px"></span>
+                                        <input type="text" class="form-control" placeholder="Numero de téléphone (+33)"
+                                            aria-label="Numero de telehone" aria-describedby="basic-addon1" name="tel">
+                                    </div>
+                                    <button type="submit" class="btn btn-info">Sauvegarder</button>
+                                </form>
+                                <form action="../../php/users/UserDelete.php" method="post"
+                                    onsubmit="return confirm('Êtes-vous sûr de vouloir fermer votre compte ?')">
+                                    <input type="hidden" name="action" value="delete">
+                                    <button type="submit" class="btn btn-danger">Fermer le compte</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <img src="" alt="profil" class="rounded-circle position-absolute start-50 translate-middle"
+                style="top: 200px; width: 150px; height: 150px; border: 5px solid white; z-index: 10;"
+                id="profil-picture">
+        </div>
+    </div>
+    <script src="script/profile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

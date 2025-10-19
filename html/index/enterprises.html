@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <div class="container-center">
+                <a class="navbar-brand" href="#">
+                    <img src="logo.png" alt="Global Jobs" width="80" height="80">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Connexion/Inscription"
+                            href="./enterprises_config.html">Configuration Entreprise</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="vw-100 vh-100 d-flex justify-content-center align-items-center ">
+        <button type="button" class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            onclick="">Creer une entreprise</button>
+        <button type="button" class="btn btn-info" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2"
+            onclick="">Creer une annonce</button>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Création d'entreprise</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <form action="../../php/companies/CompanieCreation.php" method="post">
+                    <div class="modal-body">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><img src="img/enterprise.png" alt=""
+                                    srcset="" width="25px"></span>
+                            <input type="text" class="form-control" placeholder="Nom de l'entreprise"
+                                aria-label="enterprise_name" aria-describedby="basic-addon1" name="name">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><img src="img/description.png" alt=""
+                                    srcset="" width="25px"></span>
+                            <input type="text" class="form-control" placeholder="Description de l'entreprise"
+                                aria-label="Username" aria-describedby="basic-addon1" name="description">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><img src="img/rond.png" alt="" srcset=""
+                                    width="25px"></span>
+                            <input type="text" class="form-control" placeholder="N°siret de l'entreprise"
+                                aria-label="Prenom" aria-describedby="basic-addon1" name="siret">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Fermer</button>
+                        <button type="submit" class="btn btn-success">Créer l'entreprise</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Création d'annonce</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <form action="../../php/offer/OfferCreation.php" method="post">
+                    <div class="modal-body">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><img src="img/enterprise.png" alt=""
+                                    srcset="" width="25px"></span>
+                            <input type="text" class="form-control" placeholder="Titre" aria-label="enterprise_name"
+                                aria-describedby="basic-addon1" name="title">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><img src="img/description.png" alt=""
+                                    srcset="" width="25px"></span>
+                            <textarea type="text" class="form-control" placeholder="Description de l'annonce"
+                                aria-label="Username" aria-describedby="basic-addon1" name="description"> </textarea>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><img src="img/enterprise.png" alt=""
+                                    srcset="" width="25px"></span>
+                            <input type="text" class="form-control" placeholder="Type de contract"
+                                aria-label="enterprise_name" aria-describedby="basic-addon1" name="type">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><img src="img/rond.png" alt="" srcset=""
+                                    width="25px"></span>
+                            <input type="text" class="form-control" placeholder="Durée de contrat" aria-label="Prenom"
+                                aria-describedby="basic-addon1" name="duration">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Fermer</button>
+                        <button type="submit" class="btn btn-success">Créer l'annonce</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>

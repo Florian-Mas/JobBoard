@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+</head>
+
+<body>
+
+
+    <div class="modal bg-danger position-absolute">
+        test
+    </div>
+
+    <main class="d-flex bg-secondary-subtle">
+        <!--Barre de Navigation Bootstrap CSS-->
+        <nav class="d-flex flex-column flex-shrink-0 p-3 bg-light min-vh-100 position-relative">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap">test</use>
+                </svg>
+                <span class="fs-4">Admin Panel</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="admin.html" class="nav-link" aria-current="page">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#home"></use>
+                        </svg>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="admin_config.html" class="nav-link active">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#speedometer2"></use>
+                        </svg>
+                        Configuration
+                    </a>
+                </li>
+                <li>
+                    <a href="../index.html" class="nav-link border-1 ">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#speedometer2"></use>
+                        </svg>
+                        ↼ Retour
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container">
+            <h1 class="text-center">Annonces</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="d-flex flex-row justify-content-between align-items-center filters">
+                        <h6 id="AnnounceCount">Annonces: 291 tasks</h6>
+                        <div class="right-sort"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1 overflow-x-scroll gap-3" id="AdminGrid">
+            </div>
+            <div>
+                <h2 class="text-center mt-5">Utilisateurs</h2>
+                <div class="d-flex gap-5 bg-white p-4 rounded px-3 border border-dark">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <img class="rounded-circle border-black" src="../img/logo.png" width="75px">
+                        <h6>Pseudo</h6>
+                        <button type="button" class="btn btn-danger">Bannir</button>
+                        <button type="button" class="btn btn-info" type="button" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal" onclick="opAdmin()">OP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Attribution de permissions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                </div>
+                <div class="modal-body">
+                <div class="alert alert-warning" role="alert">
+                    ⚠️ Cette action est <strong>dangereuse</strong>.<br>
+                    Attribuer les permissions administrateur donne un accès complet au système.
+                    Veillez à ne le faire que pour un utilisateur de confiance.
+                </div>
+                <p>Êtes-vous certain de vouloir continuer ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-danger">Sauvegarder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../script/admin_config.js"></script>
+</body>
+
+</html>

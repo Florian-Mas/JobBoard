@@ -1,0 +1,218 @@
+/*Version mobile */
+
+ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+    .announce-Card {
+    height: 15vh;
+    width: 35vw;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    background-color: antiquewhite;
+}
+.background {
+    background-image: url("../img/background.png");
+    width: 95vw;
+    height: 28vh;
+    background-size: cover;
+    padding: 0;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+    margin-top: 15vh;
+    height: 100vh;
+    width: 100vw;
+}
+
+.grid-container > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 95vw !important;
+}
+
+.filter {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 35vh;
+    width: 95vw;
+    height: 55px;
+    background-color: antiquewhite;
+    border-radius: 25px;
+}
+
+.filtergrid {
+    display: grid;
+    grid-template-columns: 35% 5% 35% 5% 25%;
+    width: 90%;
+}
+
+.filtergrid>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    background-color: blue;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.announce-Card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.favAndCheck {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.hv {
+    border-left: 1px solid rgb(0, 0, 0);
+    height: 35px;
+}
+
+.jobGrid {
+    position: absolute;
+    top: 50vh;
+    display: grid;
+    grid-template-columns: 65% 35%;
+    grid-template-rows: repeat(9, 1fr);
+    width: 90%;
+
+}
+
+.jobGrid>div {
+    height: 15vh;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    background-color: antiquewhite;
+}
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        margin-top: 15vh;
+        width: 100%;
+    }
+    .grid-container>div{
+        width: 100%;
+    }
+
+
+/*Version PC */
+@media screen and (min-width: 700px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .filter {
+        height: 100px;
+    }
+
+
+    .filtergrid {
+        display: grid;
+        grid-template-columns: 45% 5% 45% 5% 5%;
+        width: 90%;
+    }
+
+    .jobGrid {
+        overflow-y: scroll;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 20px;
+        width: 35%;
+        top: initial;
+
+    }
+
+    .announce-Card {
+    height: 15vh;
+    width: 35vw;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    background-color: antiquewhite;
+}
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+    }
+
+    .hv {
+        border-left: 1px solid rgb(0, 0, 0);
+        height: 50px;
+    }
+
+    .search {
+        background-color: blue;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+
+    .background {
+        width: 95vw;
+        background-position: 100% 60%;
+
+
+    }
+
+    .grid-container {
+        display: grid;
+        height: 100vh;
+        width: 95vw;
+    }
+
+        .grid-container > div {
+        display: grid;
+        height: 100vh;
+        width: 100% !important;
+    }
+
+    .detail-jobs {
+        grid-column: 2;
+        background-color: antiquewhite;
+        border-radius: 35px;
+        height: 75vh;
+        width: 100%;
+    }
+
+    .grid-container > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+}
+
+
+}

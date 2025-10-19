@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body class="overflow-x-hidden">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <div class="container-center">
+                <a class="navbar-brand" href="#">
+                    <img src="img/logo.png" alt="Global Jobs" width="80" height="80">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Connexion/Inscription"
+                            href="../login_register/connexion-inscription.html">Connexion /
+                            Inscription</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./profile.html">Profil</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li> <button class="dropdown-item" id="AdminMenu">Admin menu</button></li>
+                            <li><a class="dropdown-item" href="enterprises.html">Entreprise Section</a></li>
+                            <li><button class="dropdown-item" id="deconnexion">Déconnexion</button></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container w-80 d-flex flex-column justify-content-start align-items-center">
+        <div class="background background w-80 d-flex flex-column justify-content-center align-items-center">
+            <div class="filter">
+                <div class="filtergrid">
+
+
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Emplois
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item active" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <hr class="hv">
+                    </div>
+
+
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Ville
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item active" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <hr class="hv">
+                    </div>
+                    <div>
+                        <div class="search"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grid-container ">
+            <div class="" id="jobgrid">
+            </div>
+            <div class="detail-jobs d-flex flex-column justify-content-center align-items-center invisible"
+                id="detail-jobs">
+                <div class="detailsjobsGrid"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h2>Postuler à l'offre</h2>
+                    <form action="../../php/application/Apply.php" method="post" enctype="multipart/form-data">
+                        <div class="input-group mb-3 d-none">
+                            <span class="input-group-text" id="basic-addon1"><img src="./img/nom.png" alt="" srcset=""
+                                    width="25px"></span>
+                            <input type="text" class="form-control" placeholder="ID" aria-label="Username"
+                                aria-describedby="basic-addon1" name="enterprise" id="enterprise" hidden>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><img src="./img/nom.png" alt="" srcset=""
+                                    width="25px"></span>
+                            <input type="text" class="form-control" placeholder="Nom" aria-label="Username"
+                                aria-describedby="basic-addon1" name="name" id="name">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><img src="./img/nom.png" alt="" srcset=""
+                                    width="25px"></span>
+                            <input type="text" class="form-control" placeholder="Prenom" aria-label="Prenom"
+                                aria-describedby="basic-addon1" name="prenom" id="prenom">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><img src="./img/e-mail.png" alt=""
+                                    srcset="" width="25px"></span>
+                            <input type="text" class="form-control" placeholder="E-mail" aria-label="e-mail"
+                                aria-describedby="basic-addon1" name="mail" id="mail">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><img src="./img/appel-telephonique.png"
+                                    alt="" srcset="" width="25px"></span>
+                            <input type="text" class="form-control" placeholder="Numero de téléphone (+33)"
+                                aria-label="Numero de telehone" aria-describedby="basic-addon1" name="phone_number" id="phone_number">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><img src="./img/description.png" alt=""
+                                    srcset="" width="25px"></span>
+                            <input type="text" class="form-control"
+                                placeholder="Avez vous des remarques vous concernant ?" aria-label="Username"
+                                aria-describedby="basic-addon1" name="commentary">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Fermer</button>
+            <button type="submit" class="btn btn-success">Créer l'entreprise</button>
+        </div>
+        </form>
+    </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="./script/index.js"></script>
+</body>
+
+</html>

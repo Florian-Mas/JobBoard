@@ -1,0 +1,93 @@
+Élement général : 
+    - génération d'une session et du header pour permettre la communication avec le JavaScript :
+        "header('Content-Type: application/json; charset=utf-8');
+        session_start();"
+
+    - connection à la base de donnée : require "../connectionDB.php";
+
+    - vérification d'une session non existante :
+        "$_SESSION == null"
+
+    - requete SQL: 
+        - Base :    
+            SELECT : "regarder dans la base de donnée"
+            INSERT into et  VALUES : "Ajouter une ligne avec les éléments nessessaire"
+            UPDATE et SET : "Modifiere les élément dans une ligne"
+            DELETE from et WHERE : "supprime la ligne choisi"
+
+        - Lancement de la requete :
+            prepare($sql) : "prépare avec la requete pour" 
+            bindParam() : "choisi les éléments et les valeurs pour la requete"
+            execute() : "exécute la requete SQL"
+            fetch(mode) : "lit la requete dans la base de donnée selon le mode choisi"
+            query($sql) : "fait une requete simple"
+
+
+Dossier admin : 
+    - AdminVerify.php : Sert a vérifier si un utilisateur est administrateur.
+        "SELECT dans la table des utilisateur au niveau du grade"
+
+    - count : Compte le nombre d'offre et d'utilisateur
+    
+aplication :
+    - Apply : Permet d'inserer une ligne pour connaitre les information de l'utilisateur.
+    - ReceiveApplication : Permet de savoir quel offre appartient à quel entreprise et qui a postuler
+        "Selectionne toutes les annoces par ID d'entreprise et ID de l'utilisateur."
+
+Companies :
+    - CompanieCreation : Permet de crée une entreprise
+        "récupère les information transmise en POST par le JavaScript pour crée l'entreprise"
+        "lie la possession de l'entreprise à l'identifiant de l'utilisateur"
+        "assosie à la session l'identifiant de l'entreprise"
+
+    - CompanieOwned : Permet de vérifier la possession d'une entreprise 
+        "vérifie dans la table des entreprise si l'identifiant de l'utilisateur possède une entreprise"
+        "si oui, assosier l'identifiant de l'entreprise dans la session de l'utilisateur"
+        "si non, la session d'entreprise possède null"
+
+
+    - Entreprise_offer : élément de liaison entre entreprise et offre
+        "récupère les élément de offre"
+        "vérifie l'identifiant de l'entreprise de la table offre avec la table entreprise"
+        "revoie les donnée correspondante"
+
+
+offer :
+    - OfferCreation : Permet de crée une offre lier àà une entreprise
+        "une fois l'offre crée, redirige sur l'index"
+
+    - OfferDelete : Supprime une offre choisi
+        "une fois supprimé, redirige sur le panneau de configuration de l'entreprise
+
+    - OfferDisplay : Permet d'afficher toutes les annonces sur la page principal
+        "récupère les annonces et les entreprise qui les ont postées"
+        "les affiche un après les autres"
+    
+    - SessionOff : Permet d'arreter la session 
+        "Utiliser lors de la deconnexion de l'utilisateur"
+    
+    - SessionOn : Permet de débuté une session 
+        "Utiliser pour avoir un affichage différent en fonction de si l'utilisateur est connecter ou non"
+    
+    - UserConnection : Permet à l'utilisateur de se connecter 
+        "Fait attention que le nom d'utilisateur et le Mot de passe soit renseigner"
+        "vérifie qu'ils soient correct"
+        "si oui, applique a la session l'identifiant, le grade, le nom d'utilisateur et si une entreprise est possédé l'identifiant de 	l'entreprise"
+    
+    - UserDelete : Permet de supprimer son compte 
+        "utilise l'identifiant de session pour supprimer le compte assosié"
+
+    - UserRegistration : Permet de crée son compte 
+        "Vérifie si tous les éléments sont complet et correcte"
+        "Vérifie qu'il n'exite pas un second utilisateur qui possède le meme nom"
+        "Si c'est correct, inscrit les information dans la base de donner avec un hash du mot de passe"
+        "Si c'est incorrect, afficher une alerte en indiquant quel élément pose problème"
+
+    - UserUpdate : Met à jour le profil de l'utilisateur
+        "Vérifie le Mot de passe"
+        "verifie que le nom d'utilisteur n'est pas déja utilisé"
+        "si les deux élément sont correct, appliquer les changements"
+        "sinon indiquer ce qui bloque entre le mot de passe et le nom d'utilisateur"
+    
+
+
