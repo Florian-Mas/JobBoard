@@ -1,7 +1,7 @@
 # 🚀 GLOBAL JOBS
 
 Nous devions faire une application de job board par groupe de 3.
-Nous avons choisis de nommer notre application GLOBAL JOBS
+Nous avons choisi de nommer notre application GLOBAL JOBS
 
 ---
 
